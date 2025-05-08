@@ -11,7 +11,7 @@ This project aims to **expand emotion recognition** by creating a **real-time fa
 - Trigger actions **based on emotions** (e.g., **play music or show motivational quotes**).
 - Develop an **interactive display** using PyGame.
 
-## 🛠 Project Approach
+## Project Approach
 The project primarily leverages **Python** and the following technologies:
 - **Face Detection & Webcam Input** → **OpenCV**
 - **Emotion Classification** → CNN models with **TensorFlow/Keras** (e.g., **FER-2013**)
@@ -33,8 +33,3 @@ By the end of this project, we will achieve:
 ✔ **Emotion-triggered media control (audio/text display)**  
 ✔ **Complete documentation & presentation**  
 
-##  How to Run the Project
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/your-username/emotion-recognition.git
-   cd emotion-recognition
