@@ -1,15 +1,40 @@
-# facial Emotion Recognition
-**Motivation**
-Exploring the presence of emotional intelligent systems in everyday life has led to an increase in systems that learn and employ the understanding of emotions and feelings. For instance, systems that detect user’s feelings and improve their experience can be helpful to users when doing a mental health assessment, in a learning context, or even in an adaptive media system. Our project is in search of expanding this intelligent emotion recognition by creating a real-time facial emotion recognition system from a webcam, that will classify emotional states like happy/sad/angry/surprised and based on the state of emotion will perform triggering (like playing music or displaying content).
-**Project Goals**
-•	Implement real-time face and emotion detection using a webcam. 
-•	Complete facial expression classification utilizing pre-trained CNN models (FER-2013, for example). 
-•	Trigger action (i.e. actions like playing songs or showing motivational quotes) based on each emotion. 
-•	Create an interactive display using PyGame. 
-**Project Approach**
-We'll primarily use Python. For face detection and the webcam, we'll use OpenCV. For emotion classification, we will use CNN models with TensorFlow/Keras, and potentially some pre-trained models (e.g., FER-2013). We can also test DeepFace or FaceRecognition libraries for accuracy scores. We will use the PyGame library to deal with actions based on the person's detected emotion, for the task at hand - e.g., playing music or showing motivational content in real-time.
-**Project Outcome**
-•	Functional real-time emotion recognition system.
-•	Webcam-based face detection and emotion classification.
-•	Emotion-triggered media control (audio/text).
-•	Presentation and complete documentation.
+# Facial Emotion Recognition
+
+## Motivation
+Emotional intelligence is becoming increasingly essential in human-computer interactions. Systems that **detect and respond to user emotions** can enhance experiences in various domains, such as **mental health assessments, learning environments, and adaptive media systems**. 
+
+This project aims to **expand emotion recognition** by creating a **real-time facial emotion detection system** using a webcam. Based on the identified emotion (e.g., **happy, sad, angry, surprised**), the system will trigger relevant actions, such as **playing music or displaying motivational content**.
+
+##  Project Goals
+- Implement **real-time** face & emotion detection using a webcam.
+- Classify facial expressions using **pre-trained CNN models** (e.g., **FER-2013**).
+- Trigger actions **based on emotions** (e.g., **play music or show motivational quotes**).
+- Develop an **interactive display** using PyGame.
+
+## 🛠 Project Approach
+The project primarily leverages **Python** and the following technologies:
+- **Face Detection & Webcam Input** → **OpenCV**
+- **Emotion Classification** → CNN models with **TensorFlow/Keras** (e.g., **FER-2013**)
+- **Additional Libraries** → Testing **DeepFace**, FaceRecognition for accuracy evaluation
+- **Media Control Based on Emotion** → **PyGame** (to display motivational quotes or play music)
+- **Real-Time Processing** → Optimized for **fast classification and response triggering**
+
+## Technologies Used
+-  **Python**
+-  **OpenCV** (Face detection & webcam streaming)
+-  **TensorFlow/Keras** (CNN model for emotion recognition)
+-  **PyGame** (Interactive UI for triggered actions)
+-  **DeepFace** (Accuracy testing & benchmarking)
+
+##  Project Outcome
+By the end of this project, we will achieve:
+✔ **A functional real-time emotion recognition system**  
+✔ **Webcam-based face detection & classification**  
+✔ **Emotion-triggered media control (audio/text display)**  
+✔ **Complete documentation & presentation**  
+
+##  How to Run the Project
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/your-username/emotion-recognition.git
+   cd emotion-recognition
