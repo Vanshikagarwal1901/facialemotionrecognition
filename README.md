@@ -28,8 +28,8 @@ The project primarily leverages **Python** and the following technologies:
 
 ##  Project Outcome
 By the end of this project, we will achieve:
-✔ **A functional real-time emotion recognition system**  
-✔ **Webcam-based face detection & classification**  
-✔ **Emotion-triggered media control (audio/text display)**  
-✔ **Complete documentation & presentation**  
+- **A functional real-time emotion recognition system**  
+- **Webcam-based face detection & classification**  
+- **Emotion-triggered media control (audio/text display)**  
+- **Complete documentation & presentation**  
 
