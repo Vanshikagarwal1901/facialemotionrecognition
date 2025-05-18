@@ -9,7 +9,6 @@ This project aims to **expand emotion recognition** by creating a **real-time fa
 - Implement **real-time** face & emotion detection using a webcam.
 - Classify facial expressions using **pre-trained CNN models** (e.g., **FER-2013**).
 - Trigger actions **based on emotions** (e.g., **play music or show motivational quotes**).
-- Develop an **interactive display** using PyGame.
 
 ## Project Approach
 The project primarily leverages **Python** and the following technologies:
@@ -23,7 +22,6 @@ The project primarily leverages **Python** and the following technologies:
 -  **Python**
 -  **OpenCV** (Face detection & webcam streaming)
 -  **TensorFlow/Keras** (CNN model for emotion recognition)
--  **PyGame** (Interactive UI for triggered actions)
 -  **DeepFace** (Accuracy testing & benchmarking)
 
 ##  Project Outcome
