@@ -15,9 +15,10 @@ The project primarily leverages **Python** and the following technologies:
 - **Face Detection & Webcam Input** → **OpenCV**
 - **Emotion Classification** → CNN models with **TensorFlow/Keras** (e.g., **FER-2013**)
 - **Additional Libraries** → Testing **DeepFace**, FaceRecognition for accuracy evaluation
-- **Media Control Based on Emotion** → **PyGame** (to display motivational quotes or play music)
+- **Media Control Based on Emotion** → **PyGame** or **You Tube** (to display motivational quotes or play music)
 - **Real-Time Processing** → Optimized for **fast classification and response triggering**
-
+## Dataset
+- https://www.kaggle.com/datasets/msambare/fer2013
 ## Technologies Used
 -  **Python**
 -  **OpenCV** (Face detection & webcam streaming)
