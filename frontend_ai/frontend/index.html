@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emotion Music Player</title>
+  </head>
+  <body>
+    <div class="header">
+        EmotionAi 😉
+    </div>
+
+    <h1>🎵 Facial Emotion Detection 🎵</h1>
+
+    <div class="animation-area">
+        <ul class ="box-area">
+            <li>😝</li>
+            <li>🥺</li>
+            <li>😭</li>
+            <li>🤗</li>
+            <li>😄</li>
+            <li>😵‍💫</li>
+            <li>😡</li>
+            <li>❤️</li>
+        </ul>
+    </div>
+
+    <video
+      id="webcam"
+      width="320"
+      height="240"
+      autoplay
+      playsinline
+      muted
+    ></video>
+
+    <div>
+      <button class="start" onclick="startDetection()">Start Detection</button>
+      <button class="exit" onclick="stopWebcam()">Stop Webcam</button>
+    </div>
+
+    <div id="emotion-label">Click "Start Detection"</div>
+
+    <div class="footer">
+        Created with ❤️ by EmotionAi team | Music reacts to your mood!
+    </div>
+
+    <script>
+      let stream = null;
+      let detectionRunning = false;
+
+      async function startWebcam() {
+        const video = document.getElementById("webcam");
+        if (!stream) {
+          stream = await navigator.mediaDevices.getUserMedia({ video: true });
+          video.srcObject = stream;
+          await new Promise((resolve) => {
+            video.onloadedmetadata = () => {
+              video.play();
+              resolve();
+            };
+          });
+        }
+      }
+
+      async function startDetection() {
+        const video = document.getElementById("webcam");
+        const label = document.getElementById("emotion-label");
+
+        await startWebcam();
+
+        if (detectionRunning) return;
+        detectionRunning = true;
+
+        label.textContent = "Detecting emotion...";
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Just one-time detection, or repeat with setInterval
+        const detectFrame = async () => {
+          if (!detectionRunning) return;
+
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          const imageData = canvas.toDataURL("image/jpeg");
+
+          try {
+            const response = await fetch("http://localhost:5000/detect", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ image: imageData }),
+            });
+
+            const data = await response.json();
+
+            if (data.emotion) {
+              label.textContent = `😊 Detected Emotion: ${data.emotion}`;
+              if (data.music) {
+                window.open(data.music, "_blank");
+                detectionRunning = false; // stop after music is played
+              }
+            } else {
+              label.textContent = "😐 No face detected.";
+            }
+          } catch (err) {
+            label.textContent = "❌ Error: " + err.message;
+            detectionRunning = false;
+          }
+        };
+
+        detectFrame(); // one-time detection
+        // setInterval(detectFrame, 3000); // for repeated detection
+      }
+
+      function stopWebcam() {
+        const video = document.getElementById("webcam");
+        const label = document.getElementById("emotion-label");
+        detectionRunning = false;
+        if (stream) {
+          stream.getTracks().forEach((track) => track.stop());
+          video.srcObject = null;
+          stream = null;
+        }
+        label.textContent = "Webcam stopped.";
+      }
+    </script>
+  </body>
+</html>
+
+<script src="scripts.js" defer></script>
